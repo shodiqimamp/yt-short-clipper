@@ -252,15 +252,15 @@ Jika harus memilih, utamakan EMOSI & KONFLIK dibanding edukasi netral.
 ATURAN DURASI (KRITIS – TIDAK BOLEH DILANGGAR)
 ==============================================
 
-* Setiap clip HARUS 60–120 detik.
-* Target ideal: 85–95 detik.
+* Setiap clip HARUS 30–60 detik.
+* Target ideal: 30–45 detik.
 * Hitung durasi dari timestamp transcript.
 * JANGAN estimasi berdasarkan panjang teks.
 
-Jika durasi < 60 detik:
+Jika durasi < 30 detik:
 → PERPANJANG dengan konteks sebelum atau sesudahnya.
 
-Jika durasi > 120 detik:
+Jika durasi > 60 detik:
 → Pangkas bagian yang tidak relevan TANPA merusak alur cerita.
 
 ==================================================
@@ -272,11 +272,11 @@ Lakukan salah satu atau kombinasi berikut:
 1. Gabungkan beberapa bagian berurutan yang masih satu topik.
 2. Tambahkan setup sebelum punchline agar dramatis.
 3. Tambahkan payoff setelah cerita agar terasa lengkap.
-4. Pangkas filler tapi jaga minimal 60 detik.
+4. Pangkas filler tapi jaga minimal 30 detik.
 
 DILARANG:
 
-* Menghasilkan clip < 60 detik
+* Menghasilkan clip < 30 detik
 * Mengurangi jumlah clip
 * Mengabaikan timestamp asli
 * Mengarang timestamp
@@ -365,7 +365,7 @@ SELF-VALIDATION (WAJIB SEBELUM RETURN)
 Periksa:
 
 1. Jumlah segment = {num_clips} ?
-2. Semua durasi 60–120 detik ?
+2. Semua durasi 30–60 detik ?
 3. Semua punya tepat 6 field ?
 4. virality_score berupa integer 1–10 ?
 5. Tidak ada field lain ?
@@ -1660,13 +1660,13 @@ Transcript:
                 h["description"] = h.get("title", "No description")
                 self.log(f"  ⚠ Missing description for '{h.get('title', 'Unknown')}', using title")
             
-            if 58 <= duration <= 120:
+            if 28 <= duration <= 60:
                 valid.append(h)
                 virality = h.get("virality_score", 5)
                 self.log(f"  ✓ {h['title']} ({duration:.0f}s) [🔥 {virality}/10]")
-            elif duration > 120:
+            elif duration > 60:
                 self.log(f"  ✗ {h['title']} ({duration:.0f}s) - Too long, skipped")
-            elif duration < 58:
+            elif duration < 28:
                 self.log(f"  ✗ {h['title']} ({duration:.0f}s) - Too short, skipped")
             
             if len(valid) >= num_clips:
