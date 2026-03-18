@@ -347,7 +347,7 @@ HOOK TEXT (HARUS TAJAM & MENJUAL)
 WAJIB:
 
 * Maksimal 15 kata
-* Bahasa Indonesia casual
+* Menggunakan bahasa {subtitle_language} casual
 * TANPA emoji
 * WAJIB menyebut NAMA ORANG yang berbicara
 * Harus berupa kutipan, statement tajam, atau punchline
